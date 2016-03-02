@@ -11,6 +11,8 @@ $(document).ready(function() {
 function initializePage() {
 	$('#fb').click(login);
     $('#google').click(login);
+    $(".fa-angle-double-left").click(backButtonClicked);
+
 }
 function login(e) {
 	// Prevent following the link
@@ -20,4 +22,8 @@ function login(e) {
     console.log(document.location.href)
     var currURL = document.location.href;
     document.location.href = currURL+'home';
+}
+function backButtonClicked(e){
+    console.log("Back button clicked")
+    ga("send", "event", "back", "click");
 }
